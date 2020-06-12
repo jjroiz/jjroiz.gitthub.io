@@ -1,0 +1,43 @@
+---
+title: "Datos"
+author: "Jesús Rodriguez"
+date: "12/6/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+
+fallecidos <- read.csv("fallecidos_covid.csv",
+                       stringsAsFactors =FALSE,
+                       na.strings = "", header = TRUE)
+
+```
+
+## COVID 19 En el Perú
+
+A finales de diciembre del 2019, la Organizacion Mundialde la Salud (OMS) recibio la notificacion de 27 posibles casos de neumonia de etimilogia descinocida, incluyendo 7 casos en la poblacion de Whuhan. 
+La COVID‑19 es la enfermedad infecciosa causada por el coronavirus que se ha descubierto más recientemente. Tanto este nuevo virus como la enfermedad que provoca eran desconocidos antes de que estallara el brote en Wuhan (China) en diciembre de 2019. Actualmente la COVID‑19 es una pandemia que afecta a muchos países de todo el mundo. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r}
+fal <- fallecidos
+fal <- fal %>%
+  select(-UUID, -FECHA_NAC, -PROVINCIA, -DISTRITO)
+colnames(fal) <- c("Fecha","Edad", "Sexo", "Departamento")
+fal$Fecha <- as.Date(fal$Fecha, "%d/%m/%Y")
+fal <- arrange(fal, fal$Fecha)
+```
+
+
+
+```{r cars}
+summary(fal)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+

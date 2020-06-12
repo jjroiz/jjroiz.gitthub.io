@@ -1,9 +1,15 @@
 name: "COVID PERU"
 output_dir: "."
 navbar:
-  title: "My Website"
+  title: "Pagina"
   left:
-  - text: "Home"
+  - text: "Covid"
     href: index.html
-  - text: "About"
+  - text: "Analisis"
     href: about.html
+  - text: "Contexto"
+    href: CovidPeru1.html
+output:
+  html_document:
+    theme: united
+    highlight: textmate

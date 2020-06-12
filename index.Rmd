@@ -1,5 +1,4 @@
 ---
-title: "My Website"
+title: "COVID en el Perú"
 ---
 
-Hello, Website!
